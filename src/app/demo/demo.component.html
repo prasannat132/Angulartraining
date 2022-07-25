@@ -1,0 +1,14 @@
+<h1>Component binding</h1>
+<h3>String interpolation</h3>
+<p>{{demodata}}</p>
+<p>{{demodata.toUpperCase()}}</p>
+<p>
+    <input type="text" value="{{demodata}}"/>
+</p>
+<p>
+    <input type="text" [value]="demodata"/>
+</p>
+<button (click)="showAlert()">Click me</button>
+<p>
+    <input type="text" [(ngModel)]="demodata"/>
+</p>
