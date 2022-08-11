@@ -1,5 +1,6 @@
 <div >
-    <img [src]="data.productImage" />
+  
+     <img [src]="data.productImage" [routerLink]="['/detail', data.productId]" />
     <h4>{{ data.productName | uppercase}}</h4>
     <h5>{{ data.productPrice |conversion:currencyCode | currency :currencyCode : "symbol" :"2.3-3" }}</h5>
     <button (click)="notifyParent()" *ngIf="data.productStock>0;else stock">Add to Cart</button>

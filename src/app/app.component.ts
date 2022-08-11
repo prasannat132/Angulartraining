@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
-  selectedCode="INR";
-  setCurrency(code:string){
-    this.selectedCode=code;
-  }
+  // title = 'my-app';
+  // selectedCode="INR";
+  // setCurrency(code:string){
+  //   this.selectedCode=code;
+  // }
 }

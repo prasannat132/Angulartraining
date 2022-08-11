@@ -11,6 +11,11 @@ import { ConversionPipe } from './pipes/conversion.pipe';
 import { CurrencyComponent } from './components/currency/currency.component';
 import { CheckoutComponent } from './containers/checkout/checkout.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { ProductDetailComponent } from './containers/product-detail/product-detail.component';
+import { NumbersOnlyDirective } from './directives/numbers-only.directive';
+import { LoginComponent } from './containers/login/login.component';
+import { LoginButtonsComponent } from './components/login-buttons/login-buttons.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +24,12 @@ import {HttpClientModule} from '@angular/common/http';
     ProductListComponent,
     ConversionPipe,
     CurrencyComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ErrorPageComponent,
+    ProductDetailComponent,
+    NumbersOnlyDirective,
+    LoginComponent,
+    LoginButtonsComponent
   ],
   imports: [
     BrowserModule,

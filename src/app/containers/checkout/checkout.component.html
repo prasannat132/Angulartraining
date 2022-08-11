@@ -20,7 +20,7 @@
 
     <div>
         <label>Pincode</label>
-        <input type="text" formControlName="pincode" />
+        <input type="text" formControlName="pincode" appNumbersOnly/>
         <div *ngIf="checkoutForm.get('pincode')?.touched">
           <small *ngIf="checkoutForm.get('pincode')?.hasError('required')">pincode is required</small>
           <small *ngIf="checkoutForm.get('pincode')?.hasError('zipcode')">Allowed zipcode is{{checkoutForm.get('pincode')?.getError("zipcode").allowedCode}}</small>

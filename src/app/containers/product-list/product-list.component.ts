@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CurrencyService } from 'src/app/services/currency.service';
 import { ProductService } from 'src/app/services/product.service';
 import { ProductType } from 'src/type';
+
 
 @Component({
   selector: 'app-product-list',
@@ -11,33 +14,26 @@ import { ProductType } from 'src/type';
 export class ProductListComponent implements OnInit {
   @Input() currentCurrency!: string;
   hasError:boolean=false;
-  plist: ProductType[] = [
-    // {
-    //   productId: 100,
-    //   productName: 'Product',
-    //   productPrice: 12999.653,
-    //   productImage: '/assets/photo.jpg',
-    //   // copy/paste image in assets folder
-    //   productStock: 10,
-    // },
+  plist: ProductType[] = [];
 
-    // {
-    //   productId: 101,
-    //   productName: 'shirt',
-    //   productPrice: 13999.87,
-    //   productImage: '/assets/photo.jpg',
-    //   productStock: 20,
-    // },
-  ];
-  constructor(private productService:ProductService) {}
+  constructor(private productService:ProductService,
+    private router:Router,
+    private currencyService:CurrencyService) {}
 
   ngOnInit(): void {
     this.getData();
+    this.getCode();
   }
   addItem(data: any) {
     console.log('add to cart', data);
+    this.router.navigate(['/cart']);
   }
 
+  getCode(){
+    this.currencyService.currencyObservable.subscribe((code)=>{
+    this.currentCurrency=code;}
+    );
+  }
   getData() {
     this.productService.getProducts().subscribe(
       (data) => {

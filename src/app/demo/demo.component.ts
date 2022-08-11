@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
 demodata:string="test data";
+allowedDigits=6;
 
   constructor() { }
 

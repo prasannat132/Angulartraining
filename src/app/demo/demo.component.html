@@ -12,3 +12,6 @@
 <p>
     <input type="text" [(ngModel)]="demodata"/>
 </p>
+<p><input type="text" appNumbersOnly/></p>
+<p><input type="text" appNumbersOnly="5"/></p>
+<p><input type="text" [appNumbersOnly]="allowedDigits"/></p>
